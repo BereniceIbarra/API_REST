@@ -1,0 +1,60 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    background-color: black;
+    color: white;
+    font-style: normal;
+    padding: 20px;
+    font-size: 40px;
+}
+
+h2 {
+    text-align: center;
+    color: rgb(128, 13, 13);
+    font-size: 23px;
+}
+
+label {
+    text-align: center;
+    color: rgb(20, 53, 98);
+    font-size: 20px;
+}
+
+.botones {
+    width: 40%;
+    border-right: 6px solid black;
+    border-left: 6px solid black;
+    border-top: 6px solid black;
+    border-block-end: 6px solid black;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.formulario {
+    width: 40%;
+    border-right: 6px solid rgb(21, 80, 122);
+    border-left: 6px solid rgb(21, 80, 122);
+    border-top: 6px solid rgb(21, 80, 122);
+    border-block-end: 6px solid rgb(21, 80, 122);
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.b1 {
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #938989;
+    border: 2px solid #428896;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+.b1:hover {
+    background-color: #f0f6f0;
+    color: rgb(92, 80, 80);
+}
