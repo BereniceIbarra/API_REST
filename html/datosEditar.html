@@ -13,22 +13,30 @@
 
 <body>
     <nav class="navbar navbar-light bg-success  justify-content-between nav">
-        <a class="navbar-brand text-dark fs-1 ">-- ELIMINAR REGISTRO -- </a>
+        <a class="navbar-brand text-dark fs-1 ">-- ACTUALIZAR DATOS -- </a>
         <form class="form-inline" action="index.html">
-            <button class="btn btn-dark my-2 my-sm-0" type="text">En esta página se realiza la eliminacion de registros</button>
+            <button class="btn btn-dark my-2 my-sm-0" type="text">En esta página se realiza la actualizacion de información</button>
         </form>
     </nav><br>
-    <div class="formulario">
-        <center>
-            <form action="/eliminar-usuario" method="post">
-                <label for="etiqueta">REGISTRO</label><br>
-                <hr>
-                <label for="nombre">Ingresar el ID del registro</label>
-                <input type="text" id="id" name="id"><br><br>
-                <button class="b1" type="submit">Eliminar</button>
-            </form>
-        </center>
-    </div>
-</body>
+
+    <body>
+        <div class="formulario">
+            <center>
+                <form action="/obtener-editar-usuario" method="post">
+                    <label for="etiqueta">REGISTRO</label><br><br>
+                    <label for="idre">Ingresar ID del registro</label>
+                    <input type="text" id="id" name="id"><br><br>
+                    <hr>
+                    <label for="etiqueta">NUEVOS VALORES</label><br><br>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre"><br><br>
+                    <label for="apellido">Apellido</label>
+                    <input type="text" id="apellido" name="apellido"><br><br>
+                    <button class="b1" type="submit">Actualizar</button>
+                </form>
+
+            </center>
+        </div>
+    </body>
 
 </html>

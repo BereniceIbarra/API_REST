@@ -3,13 +3,12 @@
     margin: 0;
 }
 
-h1 {
-    text-align: center;
-    background-color: black;
-    color: white;
-    font-style: normal;
-    padding: 20px;
-    font-size: 40px;
+.nav {
+    border-radius: 3px;
+    margin-left: 130px;
+    margin-right: 40px;
+    width: 80%;
+    height: 80px;
 }
 
 h2 {
@@ -26,6 +25,7 @@ label {
 
 .botones {
     width: 40%;
+    height: 40%;
     border-right: 6px solid black;
     border-left: 6px solid black;
     border-top: 6px solid black;
@@ -45,6 +45,8 @@ label {
 }
 
 .b1 {
+    width: 250px;
+    height: 50px;
     border-radius: 4px;
     font-size: 16px;
     background-color: #938989;

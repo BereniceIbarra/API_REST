@@ -1,19 +1,22 @@
+const { json, response } = require('express');
 var express = require('express');
 var app = express();
 const path = require('path');
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.static(__dirname + '/html'));
-const usuario = [];
+
+/*ARRAY PARA ALMACENAR*/
+var usuario = [];
 
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/html/index.html'));
 });
 
+/*METODOS PARA CREAR ENTRADA */
 app.get('/crearEntrada', function(req, res) {
     res.sendFile(path.join(__dirname + '/html/crearEntrada.html'));
 });
-
 app.post('/envioDeDatos', function(req, res) {
     usuario.push({
         id: req.body.id,
@@ -21,13 +24,15 @@ app.post('/envioDeDatos', function(req, res) {
         apellido: req.body.apellido
 
     });
+    console.log(usuario);
     res.sendFile(path.join(__dirname + '/html/index.html'));
 });
-
 app.get('/crearEntrada', function(req, res) {
     res.sendFile(path.join(__dirname + '/html/crearEntrada.html'));
 });
 
+
+/*METODO PARA CONSULTAR DATOS */
 app.get('/consultarDatos', function(req, res) {
     if (usuario.id !== '' && usuario.nombre !== '' && usuario.apellido !== '') {
         res.json(usuario);
@@ -36,27 +41,43 @@ app.get('/consultarDatos', function(req, res) {
     }
 });
 
+/*METODO PARA ACTUALIZAR */
+app.get('/datosEditar', function(req, res) {
+    res.sendFile(path.join(__dirname + '/html/datosEditar.html'));
+});
+app.post('/obtener-editar-usuario', function(req, res) {
+    const id = req.body.id;
+    let newData = req.body;
+    usuario.forEach(record => {
+        if (record.id === id) {
+            record.nombre = newData.nombre;
+            record.apellido = newData.apellido;
+            console.log(`Registro ${id} ha sido actualizado`);
+        }
+    });
+    console.log(usuario);
+    res.sendFile(path.join(__dirname + '/html/index.html'));
+});
+
+/*METODO PARA ELIMINAR */
 app.get('/formularioEDatos', function(req, res) {
     res.sendFile(path.join(__dirname + '/html/datosEliminados.html'));
 });
 
-
-
 app.post('/eliminar-usuario', function(req, res) {
-    const id = req.body.id
+    const id = req.body.id;
     for (let i = 0; i < usuario.length; i++) {
         const element = usuario[i];
-
-        if (element.id === id) {
-            usuario.splice(i, 1)
+        if (element.id == id) {
+            usuario.splice(i, 1);
         }
     }
     console.log("Registro eliminado con exito");
-    res.sendFile(path.join(__dirname + '/html/index.html'));
     console.log(usuario);
-})
+    res.sendFile(path.join(__dirname + '/html/index.html'));
+});
 
-
+/*PUERTO DE ESCUCHA */
 app.listen(8000, function() {
     console.log('Servidor corriendo en el puerto 8000');
 });

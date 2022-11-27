@@ -4,26 +4,43 @@
 <head>
     <meta charset="utf-8">
     <title>API REST</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="estilo.css">
 </head>
 
 <body>
-    <nav>
-        <h1>API REST</h1>
+    <nav class="navbar navbar-light bg-success  justify-content-between nav">
+        <a class="navbar-brand text-dark fs-1 ">-- API_REST -- </a>
+        <form class="form-inline" action="index.html">
+            <button class="btn btn-dark my-2 my-sm-0" type="submit">Ibarra Torres Petra Berenice</button>
+        </form>
     </nav><br>
-    <h2>Esta web te permite hacer los diversos métodos de la arquitectura REST
-        <h2/><br>
-        <div class="botones">
+    <div class="botones">
+        <center>
+            <h3 class="fs-5 ">Programa en lenguaje Nodejs con 4 API que tengan la funcionalidad: Insertar, Eliminar, Actualizar y Buscar varios registros.
+            </h3>
+        </center>
+    </div><br>
+
+    <div class="botones">
+        <center>
             <form action="/crearEntrada" method="get">
-                <button class="b1" type="submit">Crear nueva entrada de datos</button>
+                <button class="b1" type="submit">Insertar datos</button>
             </form><br>
             <form action="/consultarDatos" method="get">
                 <button class="b1" type="submit">Consultar datos</button>
             </form><br>
+            <form action="/datosEditar" method="get">
+                <button class="b1" type="submit">Actualizar datos</button>
+            </form><br>
             <form action="/formularioEDatos" method="get">
                 <button class="b1" type="submit"> Eliminar Datos</button>
             </form>
-        </div>
+        </center>
+    </div>
 </body>
 
 </html>
